@@ -6,7 +6,8 @@ EasyApache Custom Opt Mod for PhalconPHP Framework.
 This mod will install PhalconPHP as a loadable module for PHP.
 
 Vendor website: http://phalconphp.com/
-Author website: http://thecpaneladmin.com/
+
+Module Info: http://www.thecpaneladmin.com/php-phalcon-module-for-cpanel-easyapache/
 
 Installation
 =============
