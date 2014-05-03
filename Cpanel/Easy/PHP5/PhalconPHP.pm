@@ -42,7 +42,6 @@ our $easyconfig = {
 
                 chdir $self->{'opt_mod_src_dir'} or return ( 0, q{Could not chdir into [_1]: [_2]}, $self->{'opt_mod_src_dir'}, $! );
                 @return = $self->run_system_cmd_returnable( ['unzip', 'cphalcon.zip'] );
-
             },
         },
         '2' => {
@@ -53,7 +52,6 @@ our $easyconfig = {
 
                 chdir $phalcon_src or return ( 0, q{Could not chdir into [_1]: [_2]}, $phalcon_src, $! );
                 @return = $self->run_system_cmd_returnable( ['/usr/local/bin/phpize'] );
-
             },
         },
        '3' => {
