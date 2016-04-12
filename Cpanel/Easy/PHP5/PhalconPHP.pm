@@ -6,6 +6,9 @@ package Cpanel::Easy::PHP5::PhalconPHP;
 # Custom module provided by ThecPanelAdmin / TCA Server Solutions, LLC
 # Vanessa Vasile - http://thecpaneladmin.com
 
+use strict;
+
+use Cpanel::FileUtils        ();
 use Cpanel::Version::Compare ();
 
 our $easyconfig = {
@@ -15,8 +18,20 @@ our $easyconfig = {
 
     # Require PDO at least. The user can enable PDO::MySQL and/or PDO::SQLite if needed.
     'depends' => { 'optmods' => { 'Cpanel::Easy::PHP5::PDO' => 1, }, },
+    'ensurepkg' => [ 'pcre', 'pcre-devel' ],
     'implies'       => { 'Cpanel::Easy::PHP5::PDO' => 1, },
     'url'           => 'http://phalconphp.com/',
+    'modself'     => sub {
+        my $easy       = shift;
+        my $self_hr    = shift;
+        my $profile_hr = shift;
+
+        if ( $profile_hr->{'Cpanel::Easy::PHP5'} ) {
+
+            # This controls the ordering of the build, forcing this module to be built *after* PHP
+            $self_hr->{'depends'}{'optmods'} = $easy->get_php_optmods_depends($profile_hr);
+        }
+    },
     'when_i_am_off' => sub {
         my $self = shift;
         if ( !$self->get_param('makecpphp') ) {
