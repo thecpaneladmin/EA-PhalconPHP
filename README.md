@@ -1,6 +1,18 @@
 EA-PhalconPHP
 =============
 
+*** PLEASE BE AWARE THAT THIS MODULE IS SPECIFICALLY FOR EASYAPACHE 3.
+EASYAPACHE 3 IS DEPRECATED IN FAVOR OF EASYAPACHE 4, SO THIS MODULE WILL
+NO LONGER BE SUPPORTED ***
+
+Additionally, recent changes in EA3 cause this module to not load in the module list.
+
+You are strongly advised to use PECL to manage future implementations of Phalcon
+until an EA4-supported RPM is provided! 
+
+Description
+=============
+
 EasyApache Custom Opt Mod for PhalconPHP Framework.
 
 This mod will install PhalconPHP as a loadable module for PHP.
