@@ -5,6 +5,8 @@ EA-PhalconPHP
 EASYAPACHE 3 IS DEPRECATED IN FAVOR OF EASYAPACHE 4, SO THIS MODULE WILL
 NO LONGER BE SUPPORTED ***
 
+EA4 module: https://github.com/CpanelInc/scl-phalcon
+
 Additionally, recent changes in EA3 cause this module to not load in the module list.
 
 You are strongly advised to use PECL to manage future implementations of Phalcon
